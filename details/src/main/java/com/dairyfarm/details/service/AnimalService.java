@@ -2,6 +2,7 @@ package com.dairyfarm.details.service;
 
 import com.dairyfarm.details.dao.AnimalDAO;
 import com.dairyfarm.details.model.Animals;
+import com.dairyfarm.details.model.k;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,7 @@ public class AnimalService {
     public Optional<Animals> findAnimalById(Integer animal_number){
         return animalDAO.findById(animal_number);
     }
-    public Optional<List<Animals>> findByStateOfAnimal(Animals.k state)
+    public Optional<List<Animals>> findByStateOfAnimal(k state)
     {
         return animalDAO.findByState(state);
     }

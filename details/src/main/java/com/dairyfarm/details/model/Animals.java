@@ -1,40 +1,16 @@
 package com.dairyfarm.details.model;
 
-import com.fasterxml.jackson.core.JsonEncoding;
+import java.io.Serializable;
+public enum k{
+    lacation_period,gestation_period,dead,none;
+}
+enum g{
+    f,m;
+}
 
-import javax.persistence.*;
+public class Animals implements Serializable {
 
-@Entity
-@Table(name="animals")
-public class Animals {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animal_number")
-    private int animalNumber;
-
-    @Column(name = "source")
-    private String source;
-
-    @Column(name = "gender")
-    private String gender;
-
-    @Column(name = "breed")
-    private String breed;
-
-    @Column(name = "state")
-    private String state;
-
-    @Column(name = "emp_id")
-    private int empId;
-
-    public int getAnimalNumber() {
-        return animalNumber;
-    }
-
-    public void setAnimalNumber(int animalNumber) {
-        this.animalNumber = animalNumber;
-    }
 
     public String getSource() {
         return source;
@@ -44,12 +20,22 @@ public class Animals {
         this.source = source;
     }
 
-    public String getGender() {
+    public g getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(g gender) {
         this.gender = gender;
+    }
+
+    private Integer id;
+
+    public Integer getEmp_id() {
+        return emp_id;
+    }
+
+    public void setEmp_id(Integer emp_id) {
+        this.emp_id = emp_id;
     }
 
     public String getBreed() {
@@ -60,19 +46,25 @@ public class Animals {
         this.breed = breed;
     }
 
-    public String getState() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public k getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(k state) {
         this.state = state;
     }
 
-    public int getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(int empId) {
-        this.empId = empId;
-    }
+    private String breed;
+    private Integer emp_id;
+    private g gender;
+    private String source;
+    private k state;
 }

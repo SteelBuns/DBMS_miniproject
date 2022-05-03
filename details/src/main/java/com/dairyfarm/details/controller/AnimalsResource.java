@@ -1,6 +1,7 @@
 package com.dairyfarm.details.controller;
 
 import com.dairyfarm.details.model.Animals;
+import com.dairyfarm.details.model.k;
 import com.dairyfarm.details.service.AnimalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +53,7 @@ public class AnimalsResource {
 
     }
     @GetMapping("/findByState/{state}")
-    public ResponseEntity<?> getAnimalByState(@PathVariable("state") Animals.k state) {
+    public ResponseEntity<?> getAnimalByState(@PathVariable("state") k state) {
         Optional<List<Animals>> animal= animalService.findByStateOfAnimal(state);
         return new ResponseEntity<>(animal, HttpStatus.OK);
     }
