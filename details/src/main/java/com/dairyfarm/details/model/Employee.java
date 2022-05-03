@@ -1,85 +1,80 @@
 package com.dairyfarm.details.model;
 
-import com.fasterxml.jackson.core.JsonEncoding;
-
-import javax.persistence.*;
-
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.sql.Date;
 
 @Entity
-@Table(name="employee")
-public class Employee {
+@Table(name="Employee")
+public class Employee implements Serializable {
+   @Id
+   @Column(name="emp_id")
+   private Integer id;
+   @Column(name="aadhar_number")
+   private Long aadhar_number;
+   @Column(name="age")
+   private Integer age;
 
+   private Long salary;
+   private Date join_date;
+   private String role;
 
+   public Employee() {}
+   public Employee(Integer id,Long aadhar_number,Integer age,Long salary,Date join_date,String role)
+   {
+      this.id=id;
+      this.aadhar_number=aadhar_number;
+      this.age=age;
+      this.salary=salary;
+      this.join_date=join_date;
+      this.role=role;
+   }
+   public Integer getEmp_id(){
+      return id;
+   }
+   public Long getAadhar_number(){
+      return aadhar_number;
+   }
+   public Integer getAge(){
+      return age;
+   }
 
+   public Long getSalary() {
+      return salary;
+   }
 
-        @Column(name = "aadhar_number")
-        private int aadharNumber;
+   public Date getJoin_date() {
+      return join_date;
+   }
 
+   public String getRole() {
+      return role;
+   }
 
-        @Column(name = "age")
-        private int age;
+   public void setAadhar_number(Long aadhar_number) {
+      this.aadhar_number = aadhar_number;
+   }
 
-        @Column(name = "salary")
-        private int salary;
+   public void setAge(Integer age) {
+      this.age = age;
+   }
 
-        @Column(name = "join_date")
-        private Date joinDate;
+   public void setEmp_id(Integer id) {
+      this.id = id;
+   }
 
-        @Column(name = "role")
-        private String role;
+   public void setJoin_date(Date join_date) {
+      this.join_date = join_date;
+   }
 
+   public void setRole(String role) {
+      this.role = role;
+   }
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "emp_id")
-        private int empId;
-
-        public int getAadharNumber() {
-                return aadharNumber;
-        }
-
-        public void setAadharNumber(int aadharNumber) {
-                this.aadharNumber = aadharNumber;
-        }
-
-        public int getAge() {
-                return age;
-        }
-
-        public void setAge(int age) {
-                this.age = age;
-        }
-
-        public int getSalary() {
-                return salary;
-        }
-
-        public void setSalary(int salary) {
-                this.salary = salary;
-        }
-
-        public Date getJoinDate() {
-                return joinDate;
-        }
-
-        public void setJoinDate(Date joinDate) {
-                this.joinDate = joinDate;
-        }
-
-        public String getRole() {
-                return role;
-        }
-
-        public void setRole(String role) {
-                this.role = role;
-        }
-
-        public int getEmpId() {
-                return empId;
-        }
-
-        public void setEmpId(int empId) {
-                this.empId = empId;
-        }
+   public void setSalary(Long salary) {
+      this.salary = salary;
+   }
 }

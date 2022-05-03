@@ -1,101 +1,87 @@
 package com.dairyfarm.details.model;
 
-import com.fasterxml.jackson.core.JsonEncoding;
-
 import javax.persistence.*;
-import java.util.Date;
-
+import java.io.Serializable;
+import java.sql.Date;
 @Entity
-@Table(name="med_history")
-public class MedHistory {
-
+public class MedHistory implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animal_number")
-    private int animalNumber;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false,updatable = false)
+    private Integer med_his;
 
-    @Column(name = "drug_number")
-    private int drugNumber;
-
-    @Column(name = "conceive")
     private Date conceive;
-
-    @Column(name = "insemination")
     private Date insemination;
-
-    @Column(name = "disease")
     private String disease;
-
-    @Column(name = "used")
-    private int used;
-
-    @Column(name = "date_used")
-    private Date dateUsed;
-
-    @Column(name = "response")
+    private Integer drug_number;
+    private Integer animal_number;
+    private Integer used;
+    private Date date_used;
     private String response;
 
-    public int getAnimalNumber() {
-        return animalNumber;
-    }
-
-    public void setAnimalNumber(int animalNumber) {
-        this.animalNumber = animalNumber;
-    }
-
-    public int getDrugNumber() {
-        return drugNumber;
-    }
-
-    public void setDrugNumber(int drugNumber) {
-        this.drugNumber = drugNumber;
-    }
-
-    public Date getConceive() {
-        return conceive;
-    }
+    public MedHistory(){}
 
     public void setConceive(Date conceive) {
         this.conceive = conceive;
-    }
-
-    public Date getInsemination() {
-        return insemination;
     }
 
     public void setInsemination(Date insemination) {
         this.insemination = insemination;
     }
 
-    public String getDisease() {
-        return disease;
-    }
-
     public void setDisease(String disease) {
         this.disease = disease;
     }
 
-    public int getUsed() {
-        return used;
+    public void setDrug_number(Integer drug_number) {
+        this.drug_number = drug_number;
     }
 
-    public void setUsed(int used) {
-        this.used = used;
+    public void setAnimal_number(Integer animal_number) {
+        this.animal_number = animal_number;
     }
 
-    public Date getDateUsed() {
-        return dateUsed;
-    }
-
-    public void setDateUsed(Date dateUsed) {
-        this.dateUsed = dateUsed;
-    }
-
-    public String getResponse() {
-        return response;
+    public void setDate_used(Date date_used) {
+        this.date_used = date_used;
     }
 
     public void setResponse(String response) {
         this.response = response;
+    }
+
+    public void setUsed(Integer used) {
+        this.used = used;
+    }
+
+    public Integer getAnimal_number() {
+        return animal_number;
+    }
+
+    public Date getConceive() {
+        return conceive;
+    }
+
+    public Date getDate_used() {
+        return date_used;
+    }
+
+    public Date getInsemination() {
+        return insemination;
+    }
+
+    public Integer getDrug_number() {
+        return drug_number;
+    }
+
+    public Integer getUsed() {
+        return used;
+    }
+
+    public String getDisease() {
+        return disease;
+    }
+
+    public String getResponse() {
+        return response;
     }
 }

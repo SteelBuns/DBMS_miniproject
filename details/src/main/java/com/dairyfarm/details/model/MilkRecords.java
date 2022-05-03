@@ -1,91 +1,92 @@
 package com.dairyfarm.details.model;
 
-import com.fasterxml.jackson.core.JsonEncoding;
-
 import javax.persistence.*;
-import java.util.Date;
-
+import java.sql.Date;
 
 @Entity
-@Table(name="milk_records")
 public class MilkRecords {
-
+    public enum s {
+        am, pm;
+    }
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animal_number")
-    private int animalNumber;
-
-    @Column(name = "milk_quantity")
-    private int milkQuantity;
-
-    @Column(name = "SNF")
-    private int snf;
-
-    @Column(name = "fat")
-    private int fat;
-
-    @Column(name = "shift")
-    private String shift;
-
-    @Column(name = "dateof")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false,updatable = false)
+    private Integer milkrec;
+    private Integer milk_quantity;
+    private Double snf;
+    private Double fat;
+    private s shift;
     private Date dateof;
+    private String type_of_milk;
 
-    @Column(name = "type_of_milk")
-    private String typeOfMilk;
+    private Integer animal_number;
 
-    public int getAnimalNumber() {
-        return animalNumber;
+    public MilkRecords(){
+    }
+    public void MilkRecords( Integer milk_quantity,Double snf, Double fat, s shift, Date dateof,String type_of_milk,Integer animal_number)
+    {
+        this.milk_quantity=milk_quantity;
+        this.snf=snf;
+        this.fat=fat;
+        this.shift=shift;
+        this.dateof=dateof;
+        this.type_of_milk=type_of_milk;
+        this.animal_number=animal_number;
     }
 
-    public void setAnimalNumber(int animalNumber) {
-        this.animalNumber = animalNumber;
+    public void setMilk_quantity(Integer milk_quantity) {
+        this.milk_quantity = milk_quantity;
     }
 
-    public int getMilkQuantity() {
-        return milkQuantity;
-    }
-
-    public void setMilkQuantity(int milkQuantity) {
-        this.milkQuantity = milkQuantity;
-    }
-
-    public int getSnf() {
-        return snf;
-    }
-
-    public void setSnf(int snf) {
+    public void setSnf(Double snf) {
         this.snf = snf;
     }
 
-    public int getFat() {
-        return fat;
-    }
-
-    public void setFat(int fat) {
+    public void setFat(Double fat) {
         this.fat = fat;
     }
 
-    public String getShift() {
-        return shift;
-    }
-
-    public void setShift(String shift) {
+    public void setShift(s shift) {
         this.shift = shift;
-    }
-
-    public Date getDateof() {
-        return dateof;
     }
 
     public void setDateof(Date dateof) {
         this.dateof = dateof;
     }
 
-    public String getTypeOfMilk() {
-        return typeOfMilk;
+    public void setType_of_milk(String type_of_milk) {
+        this.type_of_milk = type_of_milk;
     }
 
-    public void setTypeOfMilk(String typeOfMilk) {
-        this.typeOfMilk = typeOfMilk;
+    public void setAnimal_number(Integer animal_number) {
+        this.animal_number = animal_number;
+    }
+
+    public Integer getAnimal_number() {
+        return animal_number;
+    }
+
+    public Date getDateof() {
+        return dateof;
+    }
+
+    public Double getFat() {
+        return fat;
+    }
+
+    public Double getSnf() {
+        return snf;
+    }
+
+    public Integer getMilk_quantity() {
+        return milk_quantity;
+    }
+
+    public s getShift() {
+        return shift;
+    }
+
+    public String getType_of_milk() {
+        return type_of_milk;
     }
 }
