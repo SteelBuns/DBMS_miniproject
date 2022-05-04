@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efd07c57-85e5-4a8a-b862-bb2d62a22a19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+    <list default="true" id="0b5d8f0c-5b38-408c-a9fc-858ac3abefd2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Animals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Finance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MedHistory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Medicines.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/service/AnimalsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/service/AnimalsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/details/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/details/src/test/java/com/dairyfarm/details/DetailsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/service/test/java/com/dairyfarm/details/DetailsApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,27 +16,70 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="ProjectId" id="28K33A6vqpLlt8a3eESHQuGFUSt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectId" id="28fExQWsSU9ItvXqH0VZm00Ct1W" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Divya\Documents\GitHub\DBMS_miniproject\details\src\main\java\com\dairyfarm\details\service" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DetailsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dairyfarm.details.DetailsApplication" />
+      <module name="main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dairyfarm.details.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DetailsApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="efd07c57-85e5-4a8a-b862-bb2d62a22a19" name="Changes" comment="" />
-      <created>1651599489703</created>
+      <changelist id="0b5d8f0c-5b38-408c-a9fc-858ac3abefd2" name="Changes" comment="" />
+      <created>1650951257941</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1651599489703</updated>
+      <updated>1650951257941</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
