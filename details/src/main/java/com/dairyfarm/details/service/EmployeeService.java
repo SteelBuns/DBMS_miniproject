@@ -10,25 +10,25 @@ import java.util.Optional;
 
 @Service
 public class EmployeeService {
-    private final EmployeeDAO employeeDAO;
+    private final EmployeeDAO employeedao;
     @Autowired
-    public EmployeeService(EmployeeDAO employeeDAO) {
-        this.employeeDAO = employeeDAO;
+    public EmployeeService(EmployeeDAO employeeDAO, EmployeeDAO employeedao) {
+        this.employeedao = employeedao;
     }
     public Employee addEmployee(Employee employee){
-        return employeeDAO.save(employee);
+        return employeedao.save(employee);
     }
     public List<Employee> findAllEmployee(){
-        return employeeDAO.findAll();
+        return employeedao.findAll();
     }
     public Optional<Employee> findEmployeeById(Integer id){
-        return employeeDAO.findById(id);
+        return employeedao.findById(id);
     }
     public Employee updateEmployee(Employee employee){
-        return employeeDAO.save(employee);
+        return employeedao.save(employee);
     }
     public void deleteEmployee(Integer id){
-        employeeDAO.deleteById(id);
+        employeedao.deleteById(id);
     }
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Animals")
+@RequestMapping("/Animal")
 public class AnimalsResource {
     private final AnimalsService animalsService;
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Finance")
+@RequestMapping("/Finances")
 public class FinanceResource {
     private final FinanceService financeService;
 

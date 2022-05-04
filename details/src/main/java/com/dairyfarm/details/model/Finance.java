@@ -3,13 +3,12 @@ package com.dairyfarm.details.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
-
 @Entity
 public class Finance {
     public enum t {
         debit, credit;
     }
-    @Id
+   @Id
     private Integer id;
     private Date date_time;
     private Double amount;

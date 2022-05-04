@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.sql.Date;
 @Entity
 public class MedHistory implements Serializable {
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
     private Integer med_his;

@@ -1,5 +1,6 @@
 package com.dairyfarm.details.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public class Animals implements Serializable {
         this.gender = gender;
     }
 @Id
+@Column(name="animal_number")
     private Integer id;
 
     public Integer getEmp_id() {

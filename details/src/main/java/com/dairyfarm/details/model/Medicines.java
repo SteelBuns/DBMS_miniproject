@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import java.sql.Date;
 @Entity
 public class Medicines {
+
     @Id
     private Integer drug_number;
     private Double cost;

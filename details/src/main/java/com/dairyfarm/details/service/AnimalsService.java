@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class AnimalsService {
     private final AnimalsDAO animalsDAO;
-    @Autowired
+   @Autowired
     public AnimalsService(AnimalsDAO animalsDAO) {
         this.animalsDAO = animalsDAO;
     }

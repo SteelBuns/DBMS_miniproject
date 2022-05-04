@@ -2,7 +2,6 @@ package com.dairyfarm.details.model;
 
 import javax.persistence.*;
 import java.sql.Date;
-
 @Entity
 public class MilkRecords {
     public enum s {

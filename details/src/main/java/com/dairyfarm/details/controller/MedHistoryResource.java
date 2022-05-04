@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/MedHistory")
+@RequestMapping("/Med_History")
 public class MedHistoryResource {
     private final MedHistoryService medHistoryService;
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/MilkRecords")
+@RequestMapping("/MilkRecord")
 public class MilkRecordsResource {
     private final MilkRecordsService milkRecordsService;
 
