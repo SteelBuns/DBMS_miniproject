@@ -1,78 +1,75 @@
 package com.dairyfarm.details.model;
 
-import com.fasterxml.jackson.core.JsonEncoding;
-
-import javax.persistence.*;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
 @Entity
-@Table(name="animals")
-public class Animals {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "animal_number")
-        private int animalNumber;
+public class Animals implements Serializable {
 
-        @Column(name = "source")
-        private String source;
 
-        @Column(name = "gender")
-        private String gender;
 
-        @Column(name = "breed")
-        private String breed;
+    public String getSource() {
+        return source;
+    }
 
-        @Column(name = "state")
-        private String state;
+    public void setSource(String source) {
+        this.source = source;
+    }
 
-        @Column(name = "emp_id")
-        private int empId;
+    public g getGender() {
+        return gender;
+    }
 
-        public int getAnimalNumber() {
-                return animalNumber;
-        }
+    public void setGender(g gender) {
+        this.gender = gender;
+    }
+@Id
+@Column(name="animal_number")
+    private Integer id;
 
-        public void setAnimalNumber(int animalNumber) {
-                this.animalNumber = animalNumber;
-        }
+    public Integer getEmp_id() {
+        return emp_id;
+    }
 
-        public String getSource() {
-                return source;
-        }
+    public void setEmp_id(Integer emp_id) {
+        this.emp_id = emp_id;
+    }
 
-        public void setSource(String source) {
-                this.source = source;
-        }
+    public String getBreed() {
+        return breed;
+    }
 
-        public String getGender() {
-                return gender;
-        }
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
 
-        public void setGender(String gender) {
-                this.gender = gender;
-        }
+    public Integer getId() {
+        return id;
+    }
 
-        public String getBreed() {
-                return breed;
-        }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-        public void setBreed(String breed) {
-                this.breed = breed;
-        }
+    public k getState() {
+        return state;
+    }
 
-        public String getState() {
-                return state;
-        }
+    public void setState(k state) {
+        this.state = state;
+    }
 
-        public void setState(String state) {
-                this.state = state;
-        }
-
-        public int getEmpId() {
-                return empId;
-        }
-
-        public void setEmpId(int empId) {
-                this.empId = empId;
-        }
+    private String breed;
+    private Integer emp_id;
+    private g gender;
+    private String source;
+    private k state;
+    public enum g {
+        f, m;
+    }
+    public enum k {
+        lacation_period, gestation_period, dead, none;
+    }
 }
