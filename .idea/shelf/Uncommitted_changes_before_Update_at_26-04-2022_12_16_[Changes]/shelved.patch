@@ -1,0 +1,413 @@
+Index: details/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#MySQL Configuration\r\n\r\nspring.datasource.url=jdbc:mysql://localhost:3306/dbms_miniproject\r\nspring.datasource.username=root\r\nspring.datasource.password=oracle
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/details/src/main/resources/application.properties b/details/src/main/resources/application.properties
+--- a/details/src/main/resources/application.properties	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/resources/application.properties	(date 1650955608157)
+@@ -2,4 +2,5 @@
+ 
+ spring.datasource.url=jdbc:mysql://localhost:3306/dbms_miniproject
+ spring.datasource.username=root
+-spring.datasource.password=oracle
+\ No newline at end of file
++spring.datasource.password=oracle
++spring.jpa.show-sql=true
+\ No newline at end of file
+Index: details/src/main/java/com/dairyfarm/details/model/Medicines.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name=\"medicines\")\r\npublic class Medicines {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Column(name = \"drug_number\")\r\n    private int drugNumber;\r\n\r\n    @Column(name = \"cost\")\r\n    private int cost;\r\n\r\n    @Column(name = \"date_time\")\r\n    private Date dateTime;\r\n\r\n    @Column(name = \"doe\")\r\n    private Date doe;\r\n\r\n    @Column(name = \"name\")\r\n    private String name;\r\n\r\n    @Column(name = \"purchase_date\")\r\n    private Date purchaseDate;\r\n\r\n    @Column(name = \"purpose\")\r\n    private String purpose;\r\n\r\n    @Column(name = \"quantity\")\r\n    private int quantity;\r\n\r\n    public int getDrugNumber() {\r\n        return drugNumber;\r\n    }\r\n\r\n    public void setDrugNumber(int drugNumber) {\r\n        this.drugNumber = drugNumber;\r\n    }\r\n\r\n    public int getCost() {\r\n        return cost;\r\n    }\r\n\r\n    public void setCost(int cost) {\r\n        this.cost = cost;\r\n    }\r\n\r\n    public Date getDateTime() {\r\n        return dateTime;\r\n    }\r\n\r\n    public void setDateTime(Date dateTime) {\r\n        this.dateTime = dateTime;\r\n    }\r\n\r\n    public Date getDoe() {\r\n        return doe;\r\n    }\r\n\r\n    public void setDoe(Date doe) {\r\n        this.doe = doe;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public Date getPurchaseDate() {\r\n        return purchaseDate;\r\n    }\r\n\r\n    public void setPurchaseDate(Date purchaseDate) {\r\n        this.purchaseDate = purchaseDate;\r\n    }\r\n\r\n    public String getPurpose() {\r\n        return purpose;\r\n    }\r\n\r\n    public void setPurpose(String purpose) {\r\n        this.purpose = purpose;\r\n    }\r\n\r\n    public int getQuantity() {\r\n        return quantity;\r\n    }\r\n\r\n    public void setQuantity(int quantity) {\r\n        this.quantity = quantity;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/Medicines.java b/details/src/main/java/com/dairyfarm/details/model/Medicines.java
+--- a/details/src/main/java/com/dairyfarm/details/model/Medicines.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/Medicines.java	(date 1650955608133)
+@@ -11,28 +11,20 @@
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    @Column(name = "drug_number")
+     private int drugNumber;
+ 
+-    @Column(name = "cost")
+     private int cost;
+ 
+-    @Column(name = "date_time")
+     private Date dateTime;
+ 
+-    @Column(name = "doe")
+     private Date doe;
+ 
+-    @Column(name = "name")
+     private String name;
+ 
+-    @Column(name = "purchase_date")
+     private Date purchaseDate;
+ 
+-    @Column(name = "purpose")
+     private String purpose;
+ 
+-    @Column(name = "quantity")
+     private int quantity;
+ 
+     public int getDrugNumber() {
+Index: details/src/main/java/com/dairyfarm/details/model/MedHistory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name=\"med_history\")\r\npublic class MedHistory {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Column(name = \"animal_number\")\r\n    private int animalNumber;\r\n\r\n    @Column(name = \"drug_number\")\r\n    private int drugNumber;\r\n\r\n    @Column(name = \"conceive\")\r\n    private Date conceive;\r\n\r\n    @Column(name = \"insemination\")\r\n    private Date insemination;\r\n\r\n    @Column(name = \"disease\")\r\n    private String disease;\r\n\r\n    @Column(name = \"used\")\r\n    private int used;\r\n\r\n    @Column(name = \"date_used\")\r\n    private Date dateUsed;\r\n\r\n    @Column(name = \"response\")\r\n    private String response;\r\n\r\n    public int getAnimalNumber() {\r\n        return animalNumber;\r\n    }\r\n\r\n    public void setAnimalNumber(int animalNumber) {\r\n        this.animalNumber = animalNumber;\r\n    }\r\n\r\n    public int getDrugNumber() {\r\n        return drugNumber;\r\n    }\r\n\r\n    public void setDrugNumber(int drugNumber) {\r\n        this.drugNumber = drugNumber;\r\n    }\r\n\r\n    public Date getConceive() {\r\n        return conceive;\r\n    }\r\n\r\n    public void setConceive(Date conceive) {\r\n        this.conceive = conceive;\r\n    }\r\n\r\n    public Date getInsemination() {\r\n        return insemination;\r\n    }\r\n\r\n    public void setInsemination(Date insemination) {\r\n        this.insemination = insemination;\r\n    }\r\n\r\n    public String getDisease() {\r\n        return disease;\r\n    }\r\n\r\n    public void setDisease(String disease) {\r\n        this.disease = disease;\r\n    }\r\n\r\n    public int getUsed() {\r\n        return used;\r\n    }\r\n\r\n    public void setUsed(int used) {\r\n        this.used = used;\r\n    }\r\n\r\n    public Date getDateUsed() {\r\n        return dateUsed;\r\n    }\r\n\r\n    public void setDateUsed(Date dateUsed) {\r\n        this.dateUsed = dateUsed;\r\n    }\r\n\r\n    public String getResponse() {\r\n        return response;\r\n    }\r\n\r\n    public void setResponse(String response) {\r\n        this.response = response;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/MedHistory.java b/details/src/main/java/com/dairyfarm/details/model/MedHistory.java
+--- a/details/src/main/java/com/dairyfarm/details/model/MedHistory.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/MedHistory.java	(date 1650955608141)
+@@ -11,28 +11,20 @@
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    @Column(name = "animal_number")
+     private int animalNumber;
+ 
+-    @Column(name = "drug_number")
+     private int drugNumber;
+ 
+-    @Column(name = "conceive")
+     private Date conceive;
+ 
+-    @Column(name = "insemination")
+     private Date insemination;
+ 
+-    @Column(name = "disease")
+     private String disease;
+ 
+-    @Column(name = "used")
+     private int used;
+ 
+-    @Column(name = "date_used")
+     private Date dateUsed;
+ 
+-    @Column(name = "response")
+     private String response;
+ 
+     public int getAnimalNumber() {
+Index: details/src/main/java/com/dairyfarm/details/model/MilkRecords.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.Date;\r\n\r\n\r\n@Entity\r\n@Table(name=\"milk_records\")\r\npublic class MilkRecords {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Column(name = \"animal_number\")\r\n    private int animalNumber;\r\n\r\n    @Column(name = \"milk_quantity\")\r\n    private int milkQuantity;\r\n\r\n    @Column(name = \"SNF\")\r\n    private int snf;\r\n\r\n    @Column(name = \"fat\")\r\n    private int fat;\r\n\r\n    @Column(name = \"shift\")\r\n    private String shift;\r\n\r\n    @Column(name = \"dateof\")\r\n    private Date dateof;\r\n\r\n    @Column(name = \"type_of_milk\")\r\n    private String typeOfMilk;\r\n\r\n    public int getAnimalNumber() {\r\n        return animalNumber;\r\n    }\r\n\r\n    public void setAnimalNumber(int animalNumber) {\r\n        this.animalNumber = animalNumber;\r\n    }\r\n\r\n    public int getMilkQuantity() {\r\n        return milkQuantity;\r\n    }\r\n\r\n    public void setMilkQuantity(int milkQuantity) {\r\n        this.milkQuantity = milkQuantity;\r\n    }\r\n\r\n    public int getSnf() {\r\n        return snf;\r\n    }\r\n\r\n    public void setSnf(int snf) {\r\n        this.snf = snf;\r\n    }\r\n\r\n    public int getFat() {\r\n        return fat;\r\n    }\r\n\r\n    public void setFat(int fat) {\r\n        this.fat = fat;\r\n    }\r\n\r\n    public String getShift() {\r\n        return shift;\r\n    }\r\n\r\n    public void setShift(String shift) {\r\n        this.shift = shift;\r\n    }\r\n\r\n    public Date getDateof() {\r\n        return dateof;\r\n    }\r\n\r\n    public void setDateof(Date dateof) {\r\n        this.dateof = dateof;\r\n    }\r\n\r\n    public String getTypeOfMilk() {\r\n        return typeOfMilk;\r\n    }\r\n\r\n    public void setTypeOfMilk(String typeOfMilk) {\r\n        this.typeOfMilk = typeOfMilk;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java b/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java
+--- a/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java	(date 1650955608054)
+@@ -12,25 +12,18 @@
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    @Column(name = "animal_number")
+     private int animalNumber;
+ 
+-    @Column(name = "milk_quantity")
+     private int milkQuantity;
+ 
+-    @Column(name = "SNF")
+     private int snf;
+ 
+-    @Column(name = "fat")
+     private int fat;
+ 
+-    @Column(name = "shift")
+     private String shift;
+ 
+-    @Column(name = "dateof")
+     private Date dateof;
+ 
+-    @Column(name = "type_of_milk")
+     private String typeOfMilk;
+ 
+     public int getAnimalNumber() {
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1650954231963)
++++ b/.idea/modules.xml	(date 1650954231963)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/details/src/main/main.iml" filepath="$PROJECT_DIR$/details/src/main/main.iml" />
++      <module fileurl="file://$PROJECT_DIR$/details/src/test/test.iml" filepath="$PROJECT_DIR$/details/src/test/test.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1650954383230)
++++ b/.idea/misc.xml	(date 1650954383230)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="jpab" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/libraries/maven_wrapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/maven_wrapper.xml b/.idea/libraries/maven_wrapper.xml
+new file mode 100644
+--- /dev/null	(date 1650954232135)
++++ b/.idea/libraries/maven_wrapper.xml	(date 1650954232135)
+@@ -0,0 +1,9 @@
++<component name="libraryTable">
++  <library name="maven-wrapper">
++    <CLASSES>
++      <root url="jar://$PROJECT_DIR$/details/.mvn/wrapper/maven-wrapper.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1650954232267)
++++ b/.idea/vcs.xml	(date 1650954232267)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/.idea/workspace.xml	(date 1650955608201)
+@@ -1,8 +1,76 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="09f83dba-fe07-4e43-aa3f-e3662137148e" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/maven_wrapper.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Animals.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Employee.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Finance.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Finance.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MedHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MedHistory.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Medicines.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/Medicines.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/java/com/dairyfarm/details/model/MilkRecords.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/details/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/details/src/main/resources/application.properties" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="AnnotationType" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="28K92xIJV5B1IKjmadbpONso7Qn" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+-    <option name="showMembers" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
++  </component>
++  <component name="RecentsManager">
++    <key name="CreateClassDialog.RecentsKey">
++      <recent name="com.dairyfarm.details.model" />
++    </key>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="09f83dba-fe07-4e43-aa3f-e3662137148e" name="Changes" comment="" />
++      <created>1650954212195</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1650954212195</updated>
++    </task>
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+ </project>
+\ No newline at end of file
+Index: details/src/main/java/com/dairyfarm/details/model/Animals.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\n\r\n@Entity\r\n@Table(name=\"animals\")\r\npublic class Animals {\r\n\r\n        @Id\r\n        @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n        @Column(name = \"animal_number\")\r\n        private int animalNumber;\r\n\r\n        @Column(name = \"source\")\r\n        private String source;\r\n\r\n        @Column(name = \"gender\")\r\n        private String gender;\r\n\r\n        @Column(name = \"breed\")\r\n        private String breed;\r\n\r\n        @Column(name = \"state\")\r\n        private String state;\r\n\r\n        @Column(name = \"emp_id\")\r\n        private int empId;\r\n\r\n        public int getAnimalNumber() {\r\n                return animalNumber;\r\n        }\r\n\r\n        public void setAnimalNumber(int animalNumber) {\r\n                this.animalNumber = animalNumber;\r\n        }\r\n\r\n        public String getSource() {\r\n                return source;\r\n        }\r\n\r\n        public void setSource(String source) {\r\n                this.source = source;\r\n        }\r\n\r\n        public String getGender() {\r\n                return gender;\r\n        }\r\n\r\n        public void setGender(String gender) {\r\n                this.gender = gender;\r\n        }\r\n\r\n        public String getBreed() {\r\n                return breed;\r\n        }\r\n\r\n        public void setBreed(String breed) {\r\n                this.breed = breed;\r\n        }\r\n\r\n        public String getState() {\r\n                return state;\r\n        }\r\n\r\n        public void setState(String state) {\r\n                this.state = state;\r\n        }\r\n\r\n        public int getEmpId() {\r\n                return empId;\r\n        }\r\n\r\n        public void setEmpId(int empId) {\r\n                this.empId = empId;\r\n        }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/Animals.java b/details/src/main/java/com/dairyfarm/details/model/Animals.java
+--- a/details/src/main/java/com/dairyfarm/details/model/Animals.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/Animals.java	(date 1650955608101)
+@@ -10,22 +10,16 @@
+ 
+         @Id
+         @GeneratedValue(strategy = GenerationType.IDENTITY)
+-        @Column(name = "animal_number")
+         private int animalNumber;
+ 
+-        @Column(name = "source")
+         private String source;
+ 
+-        @Column(name = "gender")
+         private String gender;
+ 
+-        @Column(name = "breed")
+         private String breed;
+ 
+-        @Column(name = "state")
+         private String state;
+ 
+-        @Column(name = "emp_id")
+         private int empId;
+ 
+         public int getAnimalNumber() {
+Index: details/src/main/java/com/dairyfarm/details/model/Finance.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name=\"finance\")\r\npublic class Finance {\r\n\r\n\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Column(name = \"id\")\r\n    private int id;\r\n\r\n    @Column(name = \"date_time\")\r\n    private Date dateTime;\r\n\r\n    @Column(name = \"amount\")\r\n    private int amount;\r\n\r\n    @Column(name = \"trans_type\")\r\n    private String transType;\r\n\r\n    @Column(name = \"emp_id\")\r\n    private Date empId;\r\n\r\n    @Column(name = \"trans_details\")\r\n    private String transDetails;\r\n\r\n    @Column(name = \"note\")\r\n    private String note;\r\n\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Date getDateTime() {\r\n        return dateTime;\r\n    }\r\n\r\n    public void setDateTime(Date dateTime) {\r\n        this.dateTime = dateTime;\r\n    }\r\n\r\n    public int getAmount() {\r\n        return amount;\r\n    }\r\n\r\n    public void setAmount(int amount) {\r\n        this.amount = amount;\r\n    }\r\n\r\n    public String getTransType() {\r\n        return transType;\r\n    }\r\n\r\n    public void setTransType(String transType) {\r\n        this.transType = transType;\r\n    }\r\n\r\n    public Date getEmpId() {\r\n        return empId;\r\n    }\r\n\r\n    public void setEmpId(Date empId) {\r\n        this.empId = empId;\r\n    }\r\n\r\n    public String getTransDetails() {\r\n        return transDetails;\r\n    }\r\n\r\n    public void setTransDetails(String transDetails) {\r\n        this.transDetails = transDetails;\r\n    }\r\n\r\n    public String getNote() {\r\n        return note;\r\n    }\r\n\r\n    public void setNote(String note) {\r\n        this.note = note;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/Finance.java b/details/src/main/java/com/dairyfarm/details/model/Finance.java
+--- a/details/src/main/java/com/dairyfarm/details/model/Finance.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/Finance.java	(date 1650955608086)
+@@ -3,7 +3,6 @@
+ import com.fasterxml.jackson.core.JsonEncoding;
+ 
+ import javax.persistence.*;
+-import java.util.ArrayList;
+ import java.util.Date;
+ 
+ @Entity
+@@ -14,25 +13,18 @@
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    @Column(name = "id")
+     private int id;
+ 
+-    @Column(name = "date_time")
+     private Date dateTime;
+ 
+-    @Column(name = "amount")
+     private int amount;
+ 
+-    @Column(name = "trans_type")
+     private String transType;
+ 
+-    @Column(name = "emp_id")
+     private Date empId;
+ 
+-    @Column(name = "trans_details")
+     private String transDetails;
+ 
+-    @Column(name = "note")
+     private String note;
+ 
+ 
+Index: details/src/main/java/com/dairyfarm/details/model/Employee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.dairyfarm.details.model;\r\n\r\nimport com.fasterxml.jackson.core.JsonEncoding;\r\n\r\nimport javax.persistence.*;\r\n\r\nimport java.util.Date;\r\n\r\n@Entity\r\n@Table(name=\"employee\")\r\npublic class Employee {\r\n\r\n\r\n\r\n\r\n        @Column(name = \"aadhar_number\")\r\n        private int aadharNumber;\r\n\r\n\r\n        @Column(name = \"age\")\r\n        private int age;\r\n\r\n        @Column(name = \"salary\")\r\n        private int salary;\r\n\r\n        @Column(name = \"join_date\")\r\n        private Date joinDate;\r\n\r\n        @Column(name = \"role\")\r\n        private String role;\r\n\r\n\r\n        @Id\r\n        @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n        @Column(name = \"emp_id\")\r\n        private int empId;\r\n\r\n        public int getAadharNumber() {\r\n                return aadharNumber;\r\n        }\r\n\r\n        public void setAadharNumber(int aadharNumber) {\r\n                this.aadharNumber = aadharNumber;\r\n        }\r\n\r\n        public int getAge() {\r\n                return age;\r\n        }\r\n\r\n        public void setAge(int age) {\r\n                this.age = age;\r\n        }\r\n\r\n        public int getSalary() {\r\n                return salary;\r\n        }\r\n\r\n        public void setSalary(int salary) {\r\n                this.salary = salary;\r\n        }\r\n\r\n        public Date getJoinDate() {\r\n                return joinDate;\r\n        }\r\n\r\n        public void setJoinDate(Date joinDate) {\r\n                this.joinDate = joinDate;\r\n        }\r\n\r\n        public String getRole() {\r\n                return role;\r\n        }\r\n\r\n        public void setRole(String role) {\r\n                this.role = role;\r\n        }\r\n\r\n        public int getEmpId() {\r\n                return empId;\r\n        }\r\n\r\n        public void setEmpId(int empId) {\r\n                this.empId = empId;\r\n        }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/details/src/main/java/com/dairyfarm/details/model/Employee.java b/details/src/main/java/com/dairyfarm/details/model/Employee.java
+--- a/details/src/main/java/com/dairyfarm/details/model/Employee.java	(revision a61944ee9297f227a827f7189255dbea8af0ceac)
++++ b/details/src/main/java/com/dairyfarm/details/model/Employee.java	(date 1650955608117)
+@@ -13,26 +13,20 @@
+ 
+ 
+ 
+-        @Column(name = "aadhar_number")
+         private int aadharNumber;
+ 
+ 
+-        @Column(name = "age")
+         private int age;
+ 
+-        @Column(name = "salary")
+         private int salary;
+ 
+-        @Column(name = "join_date")
+         private Date joinDate;
+ 
+-        @Column(name = "role")
+         private String role;
+ 
+ 
+         @Id
+         @GeneratedValue(strategy = GenerationType.IDENTITY)
+-        @Column(name = "emp_id")
+         private int empId;
+ 
+         public int getAadharNumber() {
