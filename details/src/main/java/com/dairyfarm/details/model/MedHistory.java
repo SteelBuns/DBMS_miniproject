@@ -14,7 +14,8 @@ public class MedHistory implements Serializable {
     private Date insemination;
     private String disease;
     private Integer drug_number;
-    private Integer animal_number;
+    @Column(name="animal_number")
+    private Integer animalnumber;
     private Integer used;
     private Date date_used;
     private String response;
@@ -38,7 +39,7 @@ public class MedHistory implements Serializable {
     }
 
     public void setAnimal_number(Integer animal_number) {
-        this.animal_number = animal_number;
+        this.animalnumber = animal_number;
     }
 
     public void setDate_used(Date date_used) {
@@ -54,7 +55,7 @@ public class MedHistory implements Serializable {
     }
 
     public Integer getAnimal_number() {
-        return animal_number;
+        return animalnumber;
     }
 
     public Date getConceive() {

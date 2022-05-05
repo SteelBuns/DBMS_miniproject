@@ -32,5 +32,7 @@ public class EmployeeService {
     }
 
 
-
+    public Optional<List<Employee>> findEmployeeByRole(String role) {
+        return employeedao.findEmployeeByRole(role);
+    }
 }

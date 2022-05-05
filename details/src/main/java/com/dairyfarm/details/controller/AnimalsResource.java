@@ -29,6 +29,11 @@ public class AnimalsResource {
         return new ResponseEntity<>(animals, HttpStatus.OK);
     }
 
+    @GetMapping("/findByState/{state}")
+    public ResponseEntity<?> getAnimalsByState(@PathVariable("state") Animals.k state) {
+        Optional<List<Animals>> animals = animalsService.findAnimalsByState(state);
+        return new ResponseEntity<>(animals, HttpStatus.OK);
+    }
     @PostMapping("/add")
     public ResponseEntity<Animals> addAnimals(@RequestBody Animals animals) {
         Animals newAnimals = animalsService.addAnimals(animals);

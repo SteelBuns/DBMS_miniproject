@@ -1,5 +1,6 @@
 package com.dairyfarm.details.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -12,8 +13,10 @@ public class Finance {
     private Integer id;
     private Date date_time;
     private Double amount;
-    private t trans_type;
-    private Integer emp_id;
+    @Column(name="trans_type")
+    private t transtype;
+    @Column(name="emp_id")
+    private Integer empid;
     private String type_of_trans;
     private String note;
 
@@ -23,8 +26,8 @@ public class Finance {
         this.id=id;
         this.date_time=date_time;
         this.amount=amount;
-        this.trans_type=trans_type;
-        this.emp_id=emp_id;
+        this.transtype=trans_type;
+        this.empid=emp_id;
         this.type_of_trans=type_of_trans;
         this.note=note;
     }
@@ -42,11 +45,11 @@ public class Finance {
     }
 
     public void setTrans_type(t trans_type) {
-        this.trans_type = trans_type;
+        this.transtype = trans_type;
     }
 
-    public void setEmp_id(Integer emp_id) {
-        this.emp_id = emp_id;
+    public void setEmp_id(Integer empid) {
+        this.empid = empid;
     }
 
     public void setType_of_trans(String type_of_trans) {
@@ -70,7 +73,7 @@ public class Finance {
     }
 
     public Integer getEmp_id() {
-        return emp_id;
+        return empid;
     }
 
     public String getNote() {
@@ -82,6 +85,6 @@ public class Finance {
     }
 
     public t getTrans_type() {
-        return trans_type;
+        return transtype;
     }
 }
