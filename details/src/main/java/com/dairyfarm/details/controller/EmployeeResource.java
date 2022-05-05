@@ -29,7 +29,11 @@ public class EmployeeResource {
         Optional<Employee> employee = employeeService.findEmployeeById(id);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
-
+    @GetMapping("/findByRole/{role}")
+    public ResponseEntity<?> getEmployeeByRole(@PathVariable("role") String role) {
+        Optional<List<Employee>> employee = employeeService.findEmployeeByRole(role);
+        return new ResponseEntity<>(employee, HttpStatus.OK);
+    }
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
         Employee newEmployee = employeeService.addEmployee(employee);

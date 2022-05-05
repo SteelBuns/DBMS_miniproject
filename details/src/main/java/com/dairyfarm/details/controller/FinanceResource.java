@@ -29,6 +29,11 @@ public class FinanceResource {
         return new ResponseEntity<>(finance, HttpStatus.OK);
     }
 
+    @GetMapping("/findByTrans_type/{id}")
+    public ResponseEntity<?> getFinanceByTrans_type(@PathVariable("id") Finance.t trans_type) {
+        Optional<List<Finance>>finance= financeService.findFinanceByTranstype(trans_type);
+        return new ResponseEntity<>(finance, HttpStatus.OK);
+    }
     @PostMapping("/add")
     public ResponseEntity<Finance> addFinance(@RequestBody Finance finance) {
         Finance newAnimal = financeService.addFinance(finance);

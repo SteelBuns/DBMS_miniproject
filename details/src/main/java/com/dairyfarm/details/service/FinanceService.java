@@ -30,4 +30,9 @@ public class FinanceService {
         financeDAO.deleteById(id);
     }
 
+
+
+    public Optional<List<Finance>> findFinanceByTranstype(Finance.t trans_type) {
+        return financeDAO.findFinanceByTranstype(trans_type);
+    }
 }

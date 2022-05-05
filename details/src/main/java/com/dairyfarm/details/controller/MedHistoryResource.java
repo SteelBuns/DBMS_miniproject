@@ -23,9 +23,9 @@ public class MedHistoryResource {
         return new ResponseEntity<>(medHistory, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<?> getMedHistoryById(@PathVariable("id") Integer id) {
-        Optional<MedHistory> medicine= medHistoryService.findMedHistoryById(id);
+    @GetMapping("/find/{animal_number}")
+    public ResponseEntity<?> getMedHistoryByAnimal_Number(@PathVariable("animal_number") Integer animal_number) {
+        Optional<List<MedHistory>> medicine= medHistoryService.findMedHistoryByAnimalnumber(animal_number);
         return new ResponseEntity<>(medicine, HttpStatus.OK);
     }
 

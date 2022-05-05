@@ -30,4 +30,8 @@ public class MedHistoryService {
         medHistoryDAO.deleteById(id);
     }
 
+
+    public Optional<List<MedHistory>> findMedHistoryByAnimalnumber(Integer animal_number) {
+    return medHistoryDAO.findByAnimalnumber(animal_number);
+    }
 }

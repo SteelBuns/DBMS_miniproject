@@ -31,4 +31,7 @@ public class AnimalsService {
         animalsDAO.deleteById(id);
     }
 
+    public Optional<List<Animals>> findAnimalsByState(Animals.k state) {
+       return animalsDAO.findAnimalsByState(state);
+    }
 }
