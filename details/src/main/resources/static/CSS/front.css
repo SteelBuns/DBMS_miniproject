@@ -3,7 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
      /* background-position:center;  */
-     object-fit: fill;
+     object-fit: fit;
 }
 #head{
 font-family: 'Noto Sans', sans-serif;

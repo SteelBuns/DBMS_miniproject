@@ -1,0 +1,41 @@
+#head{
+font-family: 'Noto Sans', sans-serif;
+font-size:50px;
+}
+.container {
+  position: relative;
+}
+body{
+     background-image: url(img/1.png) ;
+     background-repeat: no-repeat;
+     background-size: 50%;
+     background-p
+     background-opacity: 0.1;
+     background-position:center;
+     align: middle;
+     object-fit: fill;
+ }
+#img1 {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  /*width: 200px;
+  height: 100px;*/
+
+}
+#img2 {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  /*width: 200px;
+  height: 100px;*/
+
+}
+#img3 {
+  position: absolute;
+  top: 75px;
+  right: 100px;
+  /*width: 200px;
+  height: 100px;*/
+
+}
