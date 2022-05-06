@@ -1,0 +1,14 @@
+#head{
+font-family: 'Noto Sans', sans-serif;
+font-size:50px;
+}
+.container {
+  position: relative;
+}
+body{
+     background-image: url(img/5.jpeg) ;
+     background-repeat: no-repeat;
+     background-size: 100%;
+      /* background-position:center;  */
+      object-fit: fill;
+ }
