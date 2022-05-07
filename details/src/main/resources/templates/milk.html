@@ -21,13 +21,72 @@
         <img id="img4" src="../static/CSS/img/back.png" >
     </a>
 
-    <a href="front.html">
-        <img id="img2" src="../static/CSS/img/add.png" >
-    </a>
+    <img id="img2" onclick="openForm1()" src="../static/CSS/img/add.png" >
+    <img id="img3" onclick="openForm2()"src="../static/CSS/img/search.png" >
 
-    <a href="front.html">
-        <img id="img3" src="../static/CSS/img/search.png" >
-    </a>
+    <div class="form-popup" id="myForm1">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>ADD NEW RECORD</h1>
+
+            <!--<label for="milkrec"><b>milkrec</b></label>
+            <input type="text" name="milkrec" required>-->
+
+            <label for="animal_number"><b>Animal Number</b></label>
+            <input type="text" name="animal_number" required>
+
+            <label for="dateof"><b>Date</b></label>
+            <input type="text"  name="dateof" required>
+
+            <label for="fat"><b>Fat</b></label>
+            <input type="text"  name="fat" required>
+
+            <label for="milk_quantity"><b>Milk Quantity</b></label>
+            <input type="text"  name="milk_quantity" required>
+
+            <label for="shift"><b>Shift</b></label>
+            <input type="text"  name="shift" required>
+
+            <label for="snf"><b>SNF</b></label>
+            <input type="text"  name="snf" required>
+
+            <label for="type_of_milk"><b>Type of Milk</b></label>
+            <input type="text"  name="type_of_milk" required>
+
+            <button type="submit" class="btn">add</button>
+            <button type="button" class="btn cancel" onclick="closeForm1()">cancel</button>
+        </form>
+    </div>
+
+    <div class="form-popup" id="myForm2">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>SEARCH BY ANIMAL NUMBER</h1>
+
+            <label for="animal_number"><b>Animal Number</b></label>
+            <input type="text" name="animal_number" required>
+
+            <button type="search" class="btn">search</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">cancel</button>
+        </form>
+    </div>
+
+    <script>
+function openForm1() {
+  document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm1() {
+  document.getElementById("myForm1").style.display = "none";
+}
+
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2() {
+  document.getElementById("myForm2").style.display = "none";
+}
+     </script>
+
 </div>
 </body>
 </html>

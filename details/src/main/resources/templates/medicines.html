@@ -18,13 +18,72 @@
          <img id="img1" src="../static/CSS/img/home.png" >
      </a>
 
-    <a href="front.html">
-        <img id="img2" src="../static/CSS/img/add.png" >
-    </a>
 
-    <a href="front.html">
-        <img id="img3" src="../static/CSS/img/search.png" >
-    </a>
+        <img id="img2" onclick="openForm1()" src="../static/CSS/img/add.png" >
+        <img id="img3" onclick="openForm2()"src="../static/CSS/img/search.png" >
+
+    <div class="form-popup" id="myForm1">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>ADD NEW RECORD</h1>
+
+            <label for="drug_number"><b>Drug Number</b></label>
+            <input type="text" name="drug_number" required>
+
+            <label for="cost"><b>Cost</b></label>
+            <input type="text"  name="cost" required>
+
+            <label for="doe"><b>Date of Expiry</b></label>
+            <input type="text"  name="doe" required>
+
+            <label for="name"><b>Name of Drug</b></label>
+            <input type="text"  name="name" required>
+
+            <label for="purchase_date"><b>Date of Purchase</b></label>
+            <input type="text"  name="purchase_date" required>
+
+            <label for="purpose"><b>Purpose</b></label>
+            <input type="text"  name="purpose" required>
+
+            <label for="quantity"><b>Quantity</b></label>
+            <input type="text"  name="quantity" required>
+
+            <button type="submit" class="btn">add</button>
+            <button type="button" class="btn cancel" onclick="closeForm1()">cancel</button>
+        </form>
+    </div>
+
+    <div class="form-popup" id="myForm2">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>SEARCH BY DRUG NUMBER</h1>
+
+            <label for="drug_number"><b>Drug Number</b></label>
+            <input type="text" name="drug_number" required>
+
+            <button type="search" class="btn">search</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">cancel</button>
+        </form>
+    </div>
+
+    <script>
+function openForm1() {
+  document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm1() {
+  document.getElementById("myForm1").style.display = "none";
+}
+
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2() {
+  document.getElementById("myForm2").style.display = "none";
+}
+     </script>
+
 </div>
+
+
 </body>
 </html>

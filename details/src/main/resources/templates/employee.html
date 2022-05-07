@@ -18,13 +18,69 @@
         <img id="img1" src="../static/CSS/img/home.png" >
     </a>
 
-    <a href="front.html">
-        <img id="img2" src="../static/CSS/img/add.png" >
-    </a>
+    <img id="img2" onclick="openForm1()" src="../static/CSS/img/add.png" >
+    <img id="img3" onclick="openForm2()"src="../static/CSS/img/search.png" >
 
-    <a href="front.html">
-        <img id="img3" src="../static/CSS/img/search.png" >
-    </a>
+    <div class="form-popup" id="myForm1">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>ADD NEW RECORD</h1>
+
+            <label for="emp_id"><b>Employee ID</b></label>
+            <input type="text" name="emp_id" required>
+
+            <label for="aadhar_number"><b>Aadhar Number</b></label>
+            <input type="text"  name="aadhar_number" required>
+
+            <label for="age"><b>Age</b></label>
+            <input type="text"  name="age" required>
+
+            <label for="join_date"><b>Join Date</b></label>
+            <input type="text"  name="join_date" required>
+
+            <label for="role"><b>Role</b></label>
+            <input type="text"  name="role" required>
+
+            <label for="salary"><b>Salary</b></label>
+            <input type="text"  name="salary" required>
+
+            <button type="submit" class="btn">add</button>
+            <button type="button" class="btn cancel" onclick="closeForm1()">cancel</button>
+        </form>
+    </div>
+
+    <div class="form-popup" id="myForm2">
+        <form action="http://localhost:8080/Animal/all" class="form-container">
+            <h1>SEARCH BY EMPLOYEE ID</h1>
+
+            <label for="emp_id"><b>Employee ID</b></label>
+            <input type="text" name="emp_id" required>
+
+            <button type="search" class="btn">search</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">cancel</button>
+        </form>
+    </div>
+
+    <script>
+function openForm1() {
+  document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm1() {
+  document.getElementById("myForm1").style.display = "none";
+}
+
+function openForm2() {
+  document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2() {
+  document.getElementById("myForm2").style.display = "none";
+}
+     </script>
+
+
+
+
 </div>
 </body>
 </html>
