@@ -6,14 +6,9 @@ font-size:50px;
   position: relative;
 }
 body{
-     background-image: url(img/2.png) ;
-     background-repeat: no-repeat;
-     background-size: 50%;
-     background-p
-     background-opacity: 0.1;
-     background-position:center;
-     align: middle;
-     object-fit: fill;
+     background-image: url(img/bg/2.png) ;
+     background-size: 100%;
+
  }
 #img1 {
   position: absolute;
